@@ -50,6 +50,8 @@ client.on("ready", () => {
           type: 0,
         },
       });
+    }else{
+      await message.channel.send("No tienes permisos para usar ese comando")
     }
   });
 });
