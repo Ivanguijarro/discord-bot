@@ -42,7 +42,7 @@ client.on("ready", () => {
     }
   });
   command(client, "status", (message) => {
-    const content = message.content.replace("/status ", "");
+    const content = message.content.replace('/status ', '');
 
     client.user.setPresence({
       activity: {
