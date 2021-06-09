@@ -43,13 +43,14 @@ client.on("ready", () => {
   });
   command(client, "status", (message) => {
     const content = message.content.replace('/status ', '');
-
-    client.user.setPresence({
-      activity: {
-        name: content,
-        type: 0,
-      },
-    });
+    if (message.member.hasPermission("ADMINISTRATOR")) {
+      client.user.setPresence({
+        activity: {
+          name: content,
+          type: 0,
+        },
+      });
+    }
   });
 });
 
