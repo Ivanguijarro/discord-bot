@@ -23,8 +23,6 @@ client.on("ready", () => {
   command(client, ["clear", "borrar"], async (message) => {
     const numMsgs = message.content.split(" ")[1];
     const promises = [];
-    
-
     if (message.member.hasPermission("ADMINISTRATOR")) {
       await message.channel.messages
         .fetch({ limit: parseInt(numMsgs) > 50 ? 50 : parseInt(numMsgs) + 1 })
