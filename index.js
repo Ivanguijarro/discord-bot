@@ -43,16 +43,12 @@ client.on("ready", () => {
   });
   command(client, "status", (message) => {
     const content = message.content.replace('/status ', '');
-    if (message.member.hasPermission("ADMINISTRATOR")) {
-      client.user.setPresence({
-        activity: {
-          name: content,
-          type: 0,
-        },
-      });
-    }else{
-      await message.channel.send("No tienes permisos para usar ese comando")
-    }
+    client.user.setPresence({
+      activity: {
+        name: content,
+        type: 0,
+      },
+    });
   });
 });
 
