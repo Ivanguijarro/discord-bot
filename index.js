@@ -23,12 +23,11 @@ client.on("ready", () => {
   command(client, ["clear", "borrar"], async (message) => {
     const numMsgs = message.content.split(" ")[1];
     const promises = [];
-    if (!numMsgs || isNaN(numMsgs) || numMsgs < 0)
-      return await message.channel.send(
-        "Comando incorrecto, indica el numero de mensajes!"
-      );
-
+    
+      
     if (message.member.hasPermission("ADMINISTRATOR")) {
+        if (!numMsgs || isNaN(numMsgs) || numMsgs < 0)
+      return await message.channel.send("Comando incorrecto, indica el numero de mensajes!");
       await message.channel.messages
         .fetch({ limit: parseInt(numMsgs) > 50 ? 50 : parseInt(numMsgs) + 1 })
         .then(async (results) => {
