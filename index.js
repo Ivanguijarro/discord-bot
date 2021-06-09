@@ -30,7 +30,7 @@ client.on("ready", () => {
 
     if (message.member.hasPermission("ADMINISTRATOR")) {
       await message.channel.messages
-        .fetch({ limit: parseInt(numMsgs) > 50 ? 50 : parseInt(num) + 1 })
+        .fetch({ limit: parseInt(numMsgs) > 50 ? 50 : parseInt(numMsgs) + 1 })
         .then(async (results) => {
           results.forEach((m) => {
             promises.push(m.delete());
