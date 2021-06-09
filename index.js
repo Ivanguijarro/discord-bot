@@ -10,6 +10,9 @@ client.on('ready', () => {
     command(client, 'ping', (message) => {
         message.channel.send('Pong!')
     })
+    command(client, 'f', (message) => {
+        message.channel.send('F')
+    })
 })
 
 client.login(config.token)
