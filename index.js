@@ -51,5 +51,5 @@ client.on("ready", () => {
   });
 });
 
-client.login(config.token);
-//client.login(process.env.poro_token)
+//client.login(config.token);
+client.login(process.env.poro_token)
