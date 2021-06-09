@@ -23,10 +23,7 @@ client.on("ready", () => {
   command(client, ["clear", "borrar"], async (message) => {
     const numMsgs = message.content.split(" ")[1];
     const promises = [];
-    if (!numMsgs || isNaN(numMsgs) || numMsgs < 0)
-      return await message.channel.send(
-        "Comando incorrecto, indica el numero de mensajes!"
-      );
+    
 
     if (message.member.hasPermission("ADMINISTRATOR")) {
       await message.channel.messages
@@ -37,6 +34,10 @@ client.on("ready", () => {
           });
           await Promise.all(promises);
         });
+        if (!numMsgs || isNaN(numMsgs) || numMsgs < 0)
+            return await message.channel.send(
+            "Comando incorrecto, indica el numero de mensajes!"
+        );
     }else{
         await message.channel.send("No tienes permisos para usar ese comando")
     }
