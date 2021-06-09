@@ -24,6 +24,10 @@ client.on("ready", () => {
     const numMsgs = message.content.split(" ")[1];
     const promises = [];
     if (message.member.hasPermission("ADMINISTRATOR")) {
+        if (!numMsgs || isNaN(numMsgs) || numMsgs < 0)
+            return await message.channel.send(
+            "Comando incorrecto, indica el numero de mensajes!"
+        );
       await message.channel.messages
         .fetch({ limit: parseInt(numMsgs) > 50 ? 50 : parseInt(numMsgs) + 1 })
         .then(async (results) => {
@@ -32,9 +36,7 @@ client.on("ready", () => {
           });
           await Promise.all(promises);
         });
-        if (!numMsgs || isNaN(numMsgs) || numMsgs < 0){
-            retunrn await message.channel.send("Comando incorrecto, indica el numero de mensajes!")
-        }
+        
     }else{
         await message.channel.send("No tienes permisos para usar ese comando")
     }
