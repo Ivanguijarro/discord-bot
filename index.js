@@ -32,8 +32,9 @@ client.on("ready", () => {
           });
           await Promise.all(promises);
         });
-        if (!numMsgs || isNaN(numMsgs) || numMsgs < 0)
-            await message.channel.send("Comando incorrecto, indica el numero de mensajes!")
+        if (!numMsgs || isNaN(numMsgs) || numMsgs < 0){
+            retunrn await message.channel.send("Comando incorrecto, indica el numero de mensajes!")
+        }
     }else{
         await message.channel.send("No tienes permisos para usar ese comando")
     }
