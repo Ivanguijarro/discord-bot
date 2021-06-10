@@ -178,7 +178,7 @@ client.on("ready", () => {
         if(target){
           const targetMember = message.guild.members.cache.get(target.id)
           targetMember.kick()
-          message.channel.send(`${tag} ha sido expulsado`)
+          message.channel.send(`<@${target.id}> ha sido expulsado`)
         }else{
           message.channel.send(`${tag} especifica a quien quieres banear`)
         }
