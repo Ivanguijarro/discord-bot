@@ -40,7 +40,7 @@ client.on("ready", () => {
           await Promise.all(promises);
         });
     }else{
-        await message.channel.send("No tienes permisos para usar ese comando")
+      message.channel.send(`<@${member.id}>, no tienes permisos para usar ese comando`)
     }
   });
   command(client, "status", (message) => {
@@ -68,7 +68,7 @@ client.on("ready", () => {
       })
       return await message.channel.send("¡Canal de texto creado!")
     }else{
-        await message.channel.send("No tienes permisos para usar ese comando")
+        message.channel.send(`<@${member.id}>, no tienes permisos para usar ese comando`)
     }
   })
   command(client, 'ccv', async (message) => { //  crear canales de voz 
@@ -84,7 +84,7 @@ client.on("ready", () => {
       })
       return await message.channel.send("¡Canal de voz creado!")
     }else{
-        await message.channel.send("No tienes permisos para usar ese comando")
+      message.channel.send(`<@${member.id}>, no tienes permisos para usar ese comando`)
     }
   })
   command(client, 'codigo', (message) => {
@@ -142,6 +142,15 @@ client.on("ready", () => {
       )
 
     message.channel.send(embed)
+  })
+  command(client, 'ban', (message) => {
+    const { member, mentions } = message
+
+    if(member.hasPermission('ADMINISTRATOR') || member.hasPermission('BAN_MEMBERS')){
+
+    }else{
+      message.channel.send(`<@${member.id}>, no tienes permisos para usar ese comando`)
+    }
   })
 });
 
