@@ -55,8 +55,8 @@ client.on("ready", () => {
   //firstMessage(client,'852262834238914640','hello world',['🏀'])
   privateMessage(client,'ping','Pong!')
 
-  command(client, 'cc', async (message) => {
-    const name = message.content.replace('/cc', '')
+  command(client, 'cct', async (message) => {
+    const name = message.content.replace('/cct', '')
     if (message.member.hasPermission("ADMINISTRATOR")) {
       if(name == ''){
         return await message.channel.send("Comando incorrecto, indica el nombre del canal")
