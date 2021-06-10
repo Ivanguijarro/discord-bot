@@ -99,7 +99,7 @@ client.on("ready", () => {
 
     message.channel.send(embed)
   })
-  command(client, 'comandos', (message) => {
+  command(client, ['comandos','c'], (message) => {
     const logo = 'https://i.imgur.com/ghtkRY4.jpg'
 
     const embed = new Discord.MessageEmbed()
@@ -111,14 +111,13 @@ client.on("ready", () => {
     .addFields(
       {
         name: '`Generales:`',
-        value: '**/comandos** -> Muestra los comandos del bot\n**/usuarios** -> Muestra los usuarios totales del servidor\n**/codigo** -> Codigo javascript del bot (por si le interesa a alguien)'
+        value: '**/comandos o /c** -> Muestra los comandos del bot\n**/usuarios** -> Muestra los usuarios totales del servidor\n**/codigo** -> Codigo javascript del bot (por si le interesa a alguien)'
       },
       {
         name: '`Otros:`',
         value: '**/ping** -> Puedes jugar al Ping Pong con el bot\n**/f** -> Press F to pay respects'
       }
     )
-
     message.channel.send(embed)
   })
 });
