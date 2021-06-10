@@ -111,7 +111,7 @@ client.on("ready", () => {
     .addFields(
       {
         name: '`Generales:`',
-        value: '**/comandos o /c** -> Muestra los comandos del bot\n**/usuarios** -> Muestra los usuarios totales del servidor\n**/codigo** -> Codigo javascript del bot (por si le interesa a alguien)'
+        value: '**/comandos o /c** -> Muestra los comandos del bot\n**/serverinfo** -> Información del servidor\n**/usuarios** -> Muestra los usuarios totales del servidor\n**/codigo** -> Codigo javascript del bot (por si le interesa a alguien)'
       },
       {
         name: '`Otros:`',
