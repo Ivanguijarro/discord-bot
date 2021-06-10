@@ -168,6 +168,24 @@ client.on("ready", () => {
       message.channel.send(`${tag}, no tienes permisos para usar ese comando`)
     }
   })
+  command(client, 'kick', (message) => {
+    const { member, mentions } = message
+
+    const tag = `<@${member.id}>`
+
+    if(member.hasPermission('ADMINISTRATOR') || member.hasPermission('KICK_MEMBERS')){
+        const target = mentions.users.first()
+        if(target){
+          const targetMember = message.guild.members.cache.get(target.id)
+          targetMember.kick()
+          message.channel.send(`${tag} ha sido expulsado`)
+        }else{
+          message.channel.send(`${tag} especifica a quien quieres banear`)
+        }
+    }else{
+      message.channel.send(`${tag}, no tienes permisos para usar ese comando`)
+    }
+  })
 });
 
 //client.login(config.token);
