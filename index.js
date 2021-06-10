@@ -106,7 +106,18 @@ client.on("ready", () => {
     .setTitle('COMANDOS')
     .setThumbnail(logo)
     .setColor('#3374FF')
-    .setDescription("El prefijo del bot es '/'\n`Generales:`\n**/comandos** -> Muestra los comandos del bot\n**/usuarios** -> Muestra los usuarios totales del servidor\n**/codigo** -> Codigo javascript del bot (por si le interesa a alguien)\n`Otros:`\n**/ping** -> Puedes jugar al Ping Pong con el bot\n**/f** -> Press F to pay respects\n")
+    //.setDescription("El prefijo del bot es '/'\n`Generales:`\n**/comandos** -> Muestra los comandos del bot\n**/usuarios** -> Muestra los usuarios totales del servidor\n**/codigo** -> Codigo javascript del bot (por si le interesa a alguien)\n`Otros:`\n**/ping** -> Puedes jugar al Ping Pong con el bot\n**/f** -> Press F to pay respects\n")
+    .setDescription("El prefijo del bot es '/'")
+    .addFields(
+      {
+        name: '`Generales:`',
+        value: '**/comandos** -> Muestra los comandos del bot\n**/usuarios** -> Muestra los usuarios totales del servidor\n**/codigo** -> Codigo javascript del bot (por si le interesa a alguien)'
+      },
+      {
+        name: '`Otros:`',
+        value: '**/ping** -> Puedes jugar al Ping Pong con el bot\n**/f** -> Press F to pay respects'
+      }
+    )
 
     message.channel.send(embed)
   })
