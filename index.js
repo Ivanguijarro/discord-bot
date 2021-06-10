@@ -160,7 +160,7 @@ client.on("ready", () => {
         if(target){
           const targetMember = message.guild.members.cache.get(target.id)
           targetMember.ban()
-          message.channel.send(`${tag} ha sido baneado`)
+          message.channel.send(`<@${target.id}> ha sido baneado`)
         }else{
           message.channel.send(`${tag} especifica a quien quieres banear`)
         }
