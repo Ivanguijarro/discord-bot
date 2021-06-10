@@ -88,7 +88,7 @@ client.on("ready", () => {
     }
   })
   command(client, 'codigo', (message) => {
-      const logo = 'https://i.imgur.com/ghtkRY4.jpg'
+    const logo = 'https://i.imgur.com/ghtkRY4.jpg'
 
     const embed = new Discord.MessageEmbed()
     .setTitle('Codigo del bot')
@@ -96,6 +96,17 @@ client.on("ready", () => {
     .setAuthor(message.author.username)
     .setThumbnail(logo)
     .setColor('#3374FF')
+
+    message.channel.send(embed)
+  })
+  command(client, 'comandos', (message) => {
+    const logo = 'https://i.imgur.com/ghtkRY4.jpg'
+
+    const embed = new Discord.MessageEmbed()
+    .setTitle('COMANDOS')
+    .setThumbnail(logo)
+    .setColor('#3374FF')
+    .setDescription("**/ping** -> Puedes jugar al Ping Pong con el bot\n**/f** -> Press F to pay respects\n**/usuarios** -> Muestra los usuarios totales del servidor\n**/codigo** -> Codigo javascript del bot (por si le interesa a alguien)\n")
 
     message.channel.send(embed)
   })
