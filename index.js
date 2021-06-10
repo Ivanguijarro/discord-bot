@@ -23,7 +23,6 @@ client.on("ready", () => {
   command(client, ["clear", "borrar"], async (message) => {
     const numMsgs = message.content.split(" ")[1];
     const promises = [];
-    const member = message
     if (message.member.hasPermission("ADMINISTRATOR")) {
         if (!numMsgs || isNaN(numMsgs) || numMsgs < 0)
             return await message.channel.send(
@@ -38,7 +37,7 @@ client.on("ready", () => {
           await Promise.all(promises);
         });
     }else{
-        await message.channel.send(`<@${member.id} no tienes permisos para usar ese comando`)
+        await message.channel.send("No tienes permisos para usar ese comando")
     }
   });
   command(client, "status", (message) => {
