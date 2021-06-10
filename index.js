@@ -87,8 +87,19 @@ client.on("ready", () => {
         await message.channel.send("No tienes permisos para usar ese comando")
     }
   })
+  command(client, 'embed', (message) => {
+      const logo = 'https://i.imgur.com/ghtkRY4.jpg'
 
+    const embed = new Discord.MessageEmbed()
+    .setTitle('Codigo del bot')
+    .setURL('https://github.com/Ivanguijarro/porobot')
+    .setAuthor(message.author.username)
+    .setThumbnail(logo)
+    .setColor('#3374FF')
+
+    message.channel.send(embed)
+  })
 });
 
-//client.login(config.token);
-client.login(process.env.poro_token);
+client.login(config.token);
+//client.login(process.env.poro_token);
