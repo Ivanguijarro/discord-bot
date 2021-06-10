@@ -180,7 +180,7 @@ client.on("ready", () => {
           targetMember.kick()
           message.channel.send(`${tag} el usuario ha sido expulsado`)
         }else{
-          message.channel.send(`${tag} especifica a quien quieres banear`)
+          message.channel.send(`${tag} especifica a quien quieres explusar`)
         }
     }else{
       message.channel.send(`${tag}, no tienes permisos para usar ese comando`)
