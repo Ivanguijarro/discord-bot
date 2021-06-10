@@ -5,6 +5,7 @@ const config = require("./config.json");
 const command = require("./command");
 //const firstMessage = require("./first-message");
 const privateMessage = require("./private-message")
+const welcome = require("./welcome")
 
 
 client.on("ready", () => {
@@ -186,6 +187,7 @@ client.on("ready", () => {
       message.channel.send(`${tag}, no tienes permisos para usar ese comando`)
     }
   })
+  welcome(client)
 });
 
 //client.login(config.token);
