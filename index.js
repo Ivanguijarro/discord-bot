@@ -120,6 +120,29 @@ client.on("ready", () => {
     )
     message.channel.send(embed)
   })
+  command(client, 'serverinfo', (message) => {
+    const { guild } = message
+
+    const { name, memberCount, region, member} = guild
+    const icon = guild.iconURL()
+
+    const embed = new Discord.MessageEmbed()
+      .setTitle(`Información de "${name}"`)
+      .setThumbnail(icon)
+      .setColor('#3374FF')
+      .addFields(
+        {
+          name: 'Miembros',
+          value: memberCount
+        },
+        {
+          name: 'Region',
+          value: region
+        }
+      )
+
+    message.channel.send(embed)
+  })
 });
 
 //client.login(config.token);
