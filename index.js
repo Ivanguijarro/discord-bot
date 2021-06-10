@@ -87,7 +87,7 @@ client.on("ready", () => {
         await message.channel.send("No tienes permisos para usar ese comando")
     }
   })
-  command(client, 'embed', (message) => {
+  command(client, 'codigo', (message) => {
       const logo = 'https://i.imgur.com/ghtkRY4.jpg'
 
     const embed = new Discord.MessageEmbed()
