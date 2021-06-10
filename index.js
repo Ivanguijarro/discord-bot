@@ -106,7 +106,7 @@ client.on("ready", () => {
     .setTitle('COMANDOS')
     .setThumbnail(logo)
     .setColor('#3374FF')
-    .setDescription("**/ping** -> Puedes jugar al Ping Pong con el bot\n**/f** -> Press F to pay respects\n**/usuarios** -> Muestra los usuarios totales del servidor\n**/codigo** -> Codigo javascript del bot (por si le interesa a alguien)\n")
+    .setDescription("**/comandos** -> Muestra los comandos del bot\n**/ping** -> Puedes jugar al Ping Pong con el bot\n**/f** -> Press F to pay respects\n**/usuarios** -> Muestra los usuarios totales del servidor\n**/codigo** -> Codigo javascript del bot (por si le interesa a alguien)\n")
 
     message.channel.send(embed)
   })
