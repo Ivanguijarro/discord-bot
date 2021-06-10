@@ -160,7 +160,7 @@ client.on("ready", () => {
         if(target){
           const targetMember = message.guild.members.cache.get(target.id)
           targetMember.ban()
-          message.channel.send(`<@${target.id}> ha sido baneado`)
+          message.channel.send(`${tag} el usuario ha sido baneado`)
         }else{
           message.channel.send(`${tag} especifica a quien quieres banear`)
         }
@@ -178,7 +178,7 @@ client.on("ready", () => {
         if(target){
           const targetMember = message.guild.members.cache.get(target.id)
           targetMember.kick()
-          message.channel.send(`<@${target.id}> ha sido expulsado`)
+          message.channel.send(`${tag} el usuario ha sido expulsado`)
         }else{
           message.channel.send(`${tag} especifica a quien quieres banear`)
         }
