@@ -37,7 +37,8 @@ client.on("ready", () => {
           await Promise.all(promises);
         });
     }else{
-        await message.channel.send("No tienes permisos para usar ese comando")
+        await message.channel.send(`${user}, no tienes permisos para usar ese comando`)
+        //await message.channel.send("No tienes permisos para usar ese comando")
     }
   });
   command(client, "status", (message) => {
