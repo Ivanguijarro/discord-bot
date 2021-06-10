@@ -3,6 +3,9 @@ const client = new Discord.Client();
 
 const config = require("./config.json");
 const command = require("./command");
+//const firstMessage = require("./first-message");
+const privateMessage = require("./private-message")
+
 
 client.on("ready", () => {
   console.log("The client is ready!");
@@ -49,6 +52,25 @@ client.on("ready", () => {
       },
     });
   });
+  //firstMessage(client,'852262834238914640','hello world',['🏀'])
+  privateMessage(client,'ping','Pong!')
+
+  command(client, 'cc', async (message) => {
+    const name = message.content.replace('/cc', '')
+    if (message.member.hasPermission("ADMINISTRATOR")) {
+      if(name == ''){
+        return await message.channel.send("Comando incorrecto, indica el nombre del canal")
+      }
+      message.guild.channels.create(name, {
+        type: 'text',
+      }).then((channel) => {
+        console.log(channel)
+      })
+    }else{
+        await message.channel.send("No tienes permisos para usar ese comando")
+    }
+  })
+
 });
 
 //client.login(config.token);
