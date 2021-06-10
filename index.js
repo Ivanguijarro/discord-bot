@@ -119,6 +119,10 @@ client.on("ready", () => {
       {
         name: '`Otros:`',
         value: '**/ping** -> Puedes jugar al Ping Pong con el bot\n**/f** -> Press F to pay respects'
+      },
+      {
+        name: 'Moderacion (ADMIN)',
+        value: '**/ban** -> Banea al usuario\n**/kick** -> Expulsa al usuario'
       }
     )
     message.channel.send(embed)
