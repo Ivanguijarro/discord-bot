@@ -162,7 +162,7 @@ client.on("ready", () => {
           targetMember.ban()
           message.channel.send(`${tag} el usuario ha sido baneado`)
         }else{
-          message.channel.send(`${tag} especifica a quien quieres banear`)
+          //message.channel.send(`${tag} especifica a quien quieres banear`)
         }
     }else{
       message.channel.send(`${tag}, no tienes permisos para usar ese comando`)
