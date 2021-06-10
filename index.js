@@ -66,7 +66,7 @@ client.on("ready", () => {
       }).then((channel) => {
         console.log(channel)
       })
-      return await message.channel.send("Canal de texto creado!")
+      return await message.channel.send("¡Canal de texto creado!")
     }else{
         await message.channel.send("No tienes permisos para usar ese comando")
     }
@@ -82,7 +82,7 @@ client.on("ready", () => {
       }).then((channel) => {
         console.log(channel)
       })
-      return await message.channel.send("Canal de voz creado!")
+      return await message.channel.send("¡Canal de voz creado!")
     }else{
         await message.channel.send("No tienes permisos para usar ese comando")
     }
