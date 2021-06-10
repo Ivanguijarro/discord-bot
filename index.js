@@ -23,6 +23,7 @@ client.on("ready", () => {
   command(client, ["clear", "borrar"], async (message) => {
     const numMsgs = message.content.split(" ")[1];
     const promises = [];
+    const member = message
     if (message.member.hasPermission("ADMINISTRATOR")) {
         if (!numMsgs || isNaN(numMsgs) || numMsgs < 0)
             return await message.channel.send(
