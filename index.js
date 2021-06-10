@@ -26,6 +26,7 @@ client.on("ready", () => {
   command(client, ["clear", "borrar"], async (message) => {
     const numMsgs = message.content.split(" ")[1];
     const promises = [];
+    const { member } = message
     if (message.member.hasPermission("ADMINISTRATOR")) {
         if (!numMsgs || isNaN(numMsgs) || numMsgs < 0)
             return await message.channel.send(
@@ -57,6 +58,7 @@ client.on("ready", () => {
 
   command(client, 'cct', async (message) => {// crear canales de texto
     const name = message.content.replace('/cct', '')
+    const { member } = message
     if (message.member.hasPermission("ADMINISTRATOR")) {
       if(name == ''){
         return await message.channel.send("Comando incorrecto, indica el nombre del canal")
@@ -73,6 +75,7 @@ client.on("ready", () => {
   })
   command(client, 'ccv', async (message) => { //  crear canales de voz 
     const name = message.content.replace('/ccv', '')
+    const { member } = message
     if (message.member.hasPermission("ADMINISTRATOR")) {
       if(name == ''){
         return await message.channel.send("Comando incorrecto, indica el nombre del canal")
