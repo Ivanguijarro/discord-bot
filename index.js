@@ -153,10 +153,19 @@ client.on("ready", () => {
   command(client, 'ban', (message) => {
     const { member, mentions } = message
 
-    if(member.hasPermission('ADMINISTRATOR') || member.hasPermission('BAN_MEMBERS')){
+    const tag = `<@${member.id}>`
 
+    if(member.hasPermission('ADMINISTRATOR') || member.hasPermission('BAN_MEMBERS')){
+        const target = mentions.users.first()
+        if(target){
+          const targetMember = message.guild.members.cache.get(target.id)
+          targetMember.ban()
+          message.channel.send(`${tag} ha sido baneado`)
+        }else{
+          message.channel.send(`${tag} especifica a quien quieres banear`)
+        }
     }else{
-      message.channel.send(`<@${member.id}>, no tienes permisos para usar ese comando`)
+      message.channel.send(`${tag}, no tienes permisos para usar ese comando`)
     }
   })
 });
