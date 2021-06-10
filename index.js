@@ -70,6 +70,21 @@ client.on("ready", () => {
         await message.channel.send("No tienes permisos para usar ese comando")
     }
   })
+  command(client, 'ccv', async (message) => {
+    const name = message.content.replace('/ccv', '')
+    if (message.member.hasPermission("ADMINISTRATOR")) {
+      if(name == ''){
+        return await message.channel.send("Comando incorrecto, indica el nombre del canal")
+      }
+      message.guild.channels.create(name, {
+        type: 'voice',
+      }).then((channel) => {
+        console.log(channel)
+      })
+    }else{
+        await message.channel.send("No tienes permisos para usar ese comando")
+    }
+  })
 
 });
 
