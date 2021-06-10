@@ -55,7 +55,7 @@ client.on("ready", () => {
   //firstMessage(client,'852262834238914640','hello world',['🏀'])
   privateMessage(client,'ping','Pong!')
 
-  command(client, 'cct', async (message) => {
+  command(client, 'cct', async (message) => {// crear canales de texto
     const name = message.content.replace('/cct', '')
     if (message.member.hasPermission("ADMINISTRATOR")) {
       if(name == ''){
@@ -65,12 +65,13 @@ client.on("ready", () => {
         type: 'text',
       }).then((channel) => {
         console.log(channel)
+        await message.channel.send("Canal de texto creado!")
       })
     }else{
         await message.channel.send("No tienes permisos para usar ese comando")
     }
   })
-  command(client, 'ccv', async (message) => {
+  command(client, 'ccv', async (message) => { //  crear canales de voz 
     const name = message.content.replace('/ccv', '')
     if (message.member.hasPermission("ADMINISTRATOR")) {
       if(name == ''){
@@ -80,6 +81,7 @@ client.on("ready", () => {
         type: 'voice',
       }).then((channel) => {
         console.log(channel)
+        await message.channel.send("Canal de voz creado!")
       })
     }else{
         await message.channel.send("No tienes permisos para usar ese comando")
