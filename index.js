@@ -6,10 +6,13 @@ const command = require("./command");
 //const firstMessage = require("./first-message");
 const privateMessage = require("./private-message")
 const welcome = require("./welcome")
+const mongo = require('./mongo')
 
 
-client.on("ready", () => {
+client.on("ready", async () => {
   console.log("The client is ready!");
+  await mongo().then(console.log("Conectado a MongoDB!"))
+  client.setMaxListeners(60)
 
   command(client, "ping", (message) => {
     message.channel.send("Pong!");
@@ -188,7 +191,9 @@ client.on("ready", () => {
     }
   })
   welcome(client)
+
+
 });
 
-//client.login(config.token);
-client.login(process.env.poro_token);
+client.login(config.token);
+//client.login(process.env.poro_token);

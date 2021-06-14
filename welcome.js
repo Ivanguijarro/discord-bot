@@ -1,11 +1,28 @@
+const mongo = require('./mongo')
+const command = require('./command')
+const welcomeSchema = require('./schemas/welcome-schema')
+
+
+
 module.exports = client => {
-    const channelId = '470503733613035526'
-    client.on('guildMemberAdd', (member) => {
-        console.log(member)
+    command(client, 'setwelcome', async (message) => {
+        const { member, channel, content, guild } = message
 
-        const message = `¡Bienvenido/a <@${member.id}>!`
+        if(!member.hasPermission('ADMINISTRATOR')){
+            channel.send('No tienes permisos para usar ese comando')
+            return
+        }
 
-        const channel = member.guild.channels.cache.get(channelId)
-        channel.send(message)
-  })
+        await mongo().then(async (mongoose) => { 
+           try {
+            await new welcomeSchema({
+              _id: guild.id, 
+              channelId: channel.id,
+              text: content,
+            }).save()
+           } finally {
+             mongoose.connection.close()
+           }
+        })
+    })
 }

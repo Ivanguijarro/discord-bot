@@ -1,4 +1,5 @@
 {
   "token": "ODI5MDUxMTAwNTIyNjEwNzg4.YGygAQ.Nvxu_X7tgGaAoZJfTKJdyeldN6g",
-  "prefix": "/"
+  "prefix": "/",
+  "mongoPath": "mongodb+srv://ivanguijarro:Ivanguijarro99@poro-bot.umx20.mongodb.net/porobot?retryWrites=true&w=majority"
 }
