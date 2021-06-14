@@ -15,11 +15,15 @@ module.exports = client => {
 
         await mongo().then(async (mongoose) => { 
            try {
-            await new welcomeSchema({
-              _id: guild.id, 
-              channelId: channel.id,
-              text: content,
-            }).save()
+            await welcomeSchema.findOneAndUpdate({
+              _id: guild.id
+            }, {
+                _id: guild.id, 
+                channelId: channel.id,
+                text,
+            }, {
+              upsert: true
+            })
            } finally {
              mongoose.connection.close()
            }
