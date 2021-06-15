@@ -10,7 +10,7 @@ const mongo = require('./mongo')
 
 
 client.on("ready", async () => {
-  console.log("The client is ready!");
+  console.log("¡Poro-bot listo!");
   await mongo().then(console.log("Conectado a MongoDB!"))
   client.setMaxListeners(60)
 
