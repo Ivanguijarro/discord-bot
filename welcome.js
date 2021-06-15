@@ -11,7 +11,7 @@ module.exports = client => {
         if(!member.hasPermission('ADMINISTRATOR')){
             channel.send('No tienes permisos para usar ese comando')
             return
-        }
+        } 
 
         await mongo().then(async (mongoose) => { 
            try {
