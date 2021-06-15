@@ -49,13 +49,15 @@ client.on("ready", async () => {
     }
   });
   command(client, "status", (message) => {
-    const content = message.content.replace('/status ', '');
-    client.user.setPresence({
-      activity: {
-        name: content,
-        type: 0,
-      },
-    });
+    if (message.member.hasPermission("ADMINISTRATOR")) {
+      const content = message.content.replace('/status ', '');
+      client.user.setPresence({
+        activity: {
+          name: content,
+          type: 0,
+        },
+      });
+    }
   });
   client.user.setPresence({
     activity: {
