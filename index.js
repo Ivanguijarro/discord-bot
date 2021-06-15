@@ -57,6 +57,8 @@ client.on("ready", async () => {
           type: 0,
         },
       });
+    } else {
+      message.channel.send("No tienes permiso para usar ese comando")
     }
   });
   client.user.setPresence({
