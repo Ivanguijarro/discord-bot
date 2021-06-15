@@ -138,6 +138,31 @@ client.on("ready", async () => {
     )
     message.channel.send(embed)
   })
+  command(client, ['helpadmin','ha'], (message) => {
+    const logo = 'https://i.imgur.com/ghtkRY4.jpg'
+
+    const embed = new Discord.MessageEmbed()
+    .setTitle('COMANDOS')
+    .setThumbnail(logo)
+    .setColor('#3374FF')
+    //.setDescription("El prefijo del bot es '/'\n`Generales:`\n**/comandos** -> Muestra los comandos del bot\n**/usuarios** -> Muestra los usuarios totales del servidor\n**/codigo** -> Codigo javascript del bot (por si le interesa a alguien)\n`Otros:`\n**/ping** -> Puedes jugar al Ping Pong con el bot\n**/f** -> Press F to pay respects\n")
+    .setDescription("El prefijo del bot es '/'")
+    .addFields(
+      {
+        name: '`Generales:`',
+        value: '**/help o /h** -> Muestra los comandos del bot\n**/serverinfo** -> Información del servidor\n**/usuarios** -> Muestra los usuarios totales del servidor\n**/codigo** -> Codigo javascript del bot (por si le interesa a alguien)'
+      },
+      {
+        name: '`Otros:`',
+        value: '**/ping** -> Puedes jugar al Ping Pong con el bot\n**/f** -> Press F to pay respects'
+      },
+      {
+        name: '`Moderacion (ADMIN)`',
+        value: '**/ban** -> Banea al usuario\n**/kick** -> Expulsa al usuario\n**/status** -> Cambia el estado del bot\n**/clear o /borrar** -> Elimina el numero de mensajes que quieras\n**/cct** -> Crea un canal de texto con el nombre que especifiques\n**/ccv** -> Crea un canal de voz con el nombre que especifiques'
+      }
+    )
+    message.channel.send(embed)
+  })
   command(client, 'serverinfo', (message) => {
     const { guild } = message
 
