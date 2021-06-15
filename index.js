@@ -57,6 +57,13 @@ client.on("ready", async () => {
       },
     });
   });
+  client.user.setPresence({
+    activity: {
+      name: "/help para ayuda ",
+      type: 0,
+    }
+  });
+
   //firstMessage(client,'852262834238914640','hello world',['🏀'])
   privateMessage(client,'ping','Pong!')
 
@@ -106,7 +113,7 @@ client.on("ready", async () => {
 
     message.channel.send(embed)
   })
-  command(client, ['comandos','c'], (message) => {
+  command(client, ['help','h'], (message) => {
     const logo = 'https://i.imgur.com/ghtkRY4.jpg'
 
     const embed = new Discord.MessageEmbed()
@@ -118,7 +125,7 @@ client.on("ready", async () => {
     .addFields(
       {
         name: '`Generales:`',
-        value: '**/comandos o /c** -> Muestra los comandos del bot\n**/serverinfo** -> Información del servidor\n**/usuarios** -> Muestra los usuarios totales del servidor\n**/codigo** -> Codigo javascript del bot (por si le interesa a alguien)'
+        value: '**/help o /h** -> Muestra los comandos del bot\n**/serverinfo** -> Información del servidor\n**/usuarios** -> Muestra los usuarios totales del servidor\n**/codigo** -> Codigo javascript del bot (por si le interesa a alguien)'
       },
       {
         name: '`Otros:`',
@@ -149,6 +156,10 @@ client.on("ready", async () => {
         {
           name: 'Region',
           value: region
+        },
+        {
+          name: 'Ayuda',
+          value: '/help'
         }
       )
 
