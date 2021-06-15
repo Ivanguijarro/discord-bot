@@ -59,7 +59,7 @@ client.on("ready", async () => {
   });
   client.user.setPresence({
     activity: {
-      name: "/help para ayuda ",
+      name: "League of Legends",
       type: 0,
     }
   });
