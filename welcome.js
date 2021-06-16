@@ -41,7 +41,7 @@ module.exports = client => {
            }
         })
         
-        const onJoin = async member => { 
+        /*const onJoin = async member => { 
           const { guild } = member
 
           let data =  cache[guild.id]
@@ -72,6 +72,6 @@ module.exports = client => {
 
         client.on('guildMemberAdd', member => {
           onJoin(member)
-        })
+        })*/
     })
 }
