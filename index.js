@@ -11,7 +11,13 @@ const mongo = require('./mongo')
 
 client.on("ready", async () => {
   console.log("¡Poro-bot listo!");
-  await mongo().then(console.log("Conectado a MongoDB!"))
+  await mongo().then((mongoose) => {
+    try{
+      console.log('¡Conectado a mongo!')
+    } finally {
+      mongoose.connection.close()
+    }
+  })
   client.setMaxListeners(60)
 
   command(client, "ping", (message) => {
