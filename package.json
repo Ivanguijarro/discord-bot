@@ -12,7 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^12.5.3",
-    "mongoose": "^5.12.13",
+    "mongoose": "^5.12.14",
     "prettier": "^2.3.1"
   }
 }

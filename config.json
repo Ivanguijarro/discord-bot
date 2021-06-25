@@ -1,5 +1,5 @@
 {
   "token": "ODI5MDUxMTAwNTIyNjEwNzg4.YGygAQ.zGCJgzLJIoC1zpe4PgJfogJDd7I",
   "prefix": "/",
-  "mongoPath": "mongodb+srv://ivanguijarro:Ivanguijarro99@poro-bot.umx20.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+  "mongoPath": "mongodb+srv://ivanguijarro:Ivanguijarro99@poro-bot.umx20.mongodb.net/test"
 }
