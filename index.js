@@ -194,7 +194,7 @@ client.on("ready", async () => {
         },
         {
           name: 'Ayuda',
-          value: '/help'
+          value: '/help o /h'
         }
       )
 
@@ -210,7 +210,7 @@ client.on("ready", async () => {
         if(target){
           const targetMember = message.guild.members.cache.get(target.id)
           targetMember.ban()
-          message.channel.send(`${tag} el usuario ha sido baneado`)
+          message.channel.send(``${tag} el usuario ha sido baneado``)
         }else{
           message.channel.send(`${tag} especifica a quien quieres banear`)
         }
@@ -228,7 +228,7 @@ client.on("ready", async () => {
         if(target){
           const targetMember = message.guild.members.cache.get(target.id)
           targetMember.kick()
-          message.channel.send(`${tag} el usuario ha sido expulsado`)
+          message.channel.send(``${tag} el usuario ha sido expulsado``)
         }else{
           message.channel.send(`${tag} especifica a quien quieres explusar`)
         }
