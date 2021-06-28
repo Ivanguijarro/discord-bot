@@ -8,7 +8,10 @@ const reqString = {
 const welcomeSchema = mongoose.Schema({
     _id: reqString,
     channelId: reqString,
-    text: reqString
+    text: {
+        type: String,
+        default: ""
+    }
 })
 
 module.exports = mongoose.model('welcome-channels', welcomeSchema)
