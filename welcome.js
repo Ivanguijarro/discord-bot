@@ -8,7 +8,7 @@ module.exports = client => {
 
     const cache = {}
     command(client, 'setwelcome', async (message) => {
-        const { member, channel, content, guild, text} = message
+        const { member, channel, content, guild} = message
 
         if(!member.hasPermission('ADMINISTRATOR')){
             channel.send('No tienes permisos para usar ese comando')
