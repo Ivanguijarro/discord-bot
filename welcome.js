@@ -1,12 +1,26 @@
 const mongo = require('./mongo')
+const mongoose = require('mongoose')
 const command = require('./command')
 const welcomeSchema = require('./schemas/welcome-schema')
 
-
+async function getSchema(guild) {
+  let result = await welcomeSchema.findOne({
+    guildId: guild.id,
+  })
+  if (!result) {
+    await new profileSchema({
+      guildId: guild.id,
+    }).save()
+    result = await welcomeSchema.findOne({
+      guildId: guild.id,
+    })
+  }
+  return result
+}
 
 module.exports = client => {
-
     const cache = {}
+    
     command(client, 'setwelcome', async (message) => {
         const { member, channel, content, guild} = message
 
@@ -29,28 +43,24 @@ module.exports = client => {
         split.shift()
         text = split.join(' ')
 
-        await mongo().then(async (mongoose) => { 
-           try {
-            await new welcomeSchema({
-                _id: guild.id, 
-                channelId: channel.id,
-                text,
-            }).save()
-           } finally {
-             mongoose.connection.close()
-           }
+        await getSchema(guild) 
+
+        await welcomeSchema.updateOne({
+          guildId: guild.id
+        },{
+          $set:{"text": text}
         })
         
-        /*const onJoin = async member => { 
+        const onJoin = async member => { 
           const { guild } = member
 
-          let data =  cache[guild.id]
+          let data = cache[guild.id]
 
           if(!data){
             console.log('OBTENIENDO DE LA BASE DE DATOS')
             await mongo().then(async (mongoose) => {
               try{
-                const result = await welcomeSchema.findOne({ _id: guild.id }) 
+                const result = getSchema(guild)
 
                 cache[guild.id] = data = [result.channelId, result.text]
               } finally {
@@ -72,6 +82,6 @@ module.exports = client => {
 
         client.on('guildMemberAdd', member => {
           onJoin(member)
-        })*/
+        })
     })
 }

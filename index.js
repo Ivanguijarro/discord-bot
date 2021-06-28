@@ -3,7 +3,6 @@ const client = new Discord.Client();
 
 const config = require("./config.json");
 const command = require("./command");
-//const firstMessage = require("./first-message");
 const privateMessage = require("./private-message")
 const welcome = require("./welcome")
 const mongo = require('./mongo')
@@ -241,5 +240,5 @@ client.on("ready", async () => {
 
 });
 
-//client.login(config.token);
+client.login(config.token);
 client.login(process.env.poro_token);

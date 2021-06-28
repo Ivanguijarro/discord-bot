@@ -10,7 +10,7 @@ const welcomeSchema = mongoose.Schema({
     channelId: reqString,
     text: {
         type: String,
-        default: ""
+        default: "Bienvenido "
     }
 })
 
