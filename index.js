@@ -28,7 +28,7 @@ client.on("ready", async () => {
   command(client, "usuarios", (message) => {
     client.guilds.cache.forEach((guild) => {
       message.channel.send(
-        `${guild.name} tiene un total de ${guild.memberCount} miembros`
+        `*${guild.name} tiene un total de ${guild.memberCount} miembros*`
       );
     });
   });
