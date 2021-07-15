@@ -143,7 +143,7 @@ client.on("ready", async () => {
       },
       {
         name: '`Moderacion (ADMIN)`',
-        value: '**-ban** -> Banea al usuario\n**-kick** -> Expulsa al usuario\n**-status** -> Cambia el estado del bot\n**-clear o -borrar** -> Elimina el numero de mensajes que quieras\n**-cct** -> Crea un canal de texto con el nombre que especifiques\n**-ccv** -> Crea un canal de voz con el nombre que especifiques'
+        value: '**-ban** -> Banea al usuario\n**-kick** -> Expulsa al usuario\n**-status** -> Cambia el estado del bot\n**-clear o -borrar** -> Elimina el numero de mensajes que especifiques\n**-cct** -> Crea un canal de texto con el nombre que especifiques\n**-ccv** -> Crea un canal de voz con el nombre que especifiques'
       }
     )
     message.channel.send(embed)
