@@ -135,7 +135,6 @@ client.on("ready", async () => {
     const embed = new Discord.MessageEmbed()
     .setTitle('Codigo del bot')
     .setURL('https://github.com/Ivanguijarro/porobot')
-    .setAuthor('@SISPLAU')
     .setThumbnail(logo)
     .setColor('#3374FF')
 
