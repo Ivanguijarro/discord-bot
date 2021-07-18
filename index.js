@@ -74,6 +74,7 @@ client.on("ready", async () => {
       message.channel.send("No tienes permiso para usar ese comando")
     }
   });
+
   client.user.setPresence({// status por defecto
     activity: {
       name: "League of Legends",
@@ -134,7 +135,7 @@ client.on("ready", async () => {
     const embed = new Discord.MessageEmbed()
     .setTitle('Codigo del bot')
     .setURL('https://github.com/Ivanguijarro/porobot')
-    .setAuthor(message.author.username)
+    .setAuthor('@SISPLAU')
     .setThumbnail(logo)
     .setColor('#3374FF')
 
