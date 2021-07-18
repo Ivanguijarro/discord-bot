@@ -184,6 +184,7 @@ client.on("ready", async () => {
         icon: bomba
       }
     )
+    message.send(embed)
   })
 
   // informacion del servidor
