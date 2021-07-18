@@ -76,7 +76,8 @@ client.on("ready", async () => {
   //firstMessage(client,'852262834238914640','hello world',['🏀'])
   privateMessage(client,'ping','Pong!')
   privateMessage(client,'teemo','Cómo osas pronunciar el nombre del gran TEEMO escoria!?')
-  privateMessafe(client,['f','F'],'F')
+  privateMessafe(client,'f','F')
+  privateMessafe(client,'F','F')
 
   command(client, 'cct', async (message) => {// crear canales de texto
     const name = message.content.replace('/cct', '')
