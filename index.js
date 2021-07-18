@@ -171,20 +171,15 @@ client.on("ready", async () => {
 
   command(client,'tienda', (message) => {
     const logo = 'https://i.imgur.com/ghtkRY4.jpg'
-    const bomba = 'https://imgur.com/vOZ5NPQ'
+    const bomba = 'https://i.imgur.com/vOZ5NPQ.png'
 
     const embed = new Discord.MessageEmbed()
     .setTitle('TIENDA')
     .setThumbnail(logo)
     .setColor('#3374FF')
     .setDescription("Compra objetos con -buy <objeto>")
-    .addFields(
-      {
-        name: 'Bomba troll',
-        icon: bomba
-      }
-    )
     message.channel.send(embed)
+  
   })
 
   // informacion del servidor
