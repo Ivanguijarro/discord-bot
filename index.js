@@ -137,7 +137,7 @@ client.on("ready", async () => {
     .setURL('https://github.com/Ivanguijarro/porobot')
     .setThumbnail(logo)
     .setColor('#3374FF')
-    .setDescription('Autor: SISPLAU')
+    .setDescription('**Autor:** SISPLAU')
 
     message.channel.send(embed)
   })
