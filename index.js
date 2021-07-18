@@ -10,7 +10,6 @@ const mongo = require('./mongo')
 
 client.on("ready", async () => {
   console.log("¡Poro-bot listo!");
-  message.channel.send("Listo")
   await mongo().then((mongoose) => {
     try{
       console.log('¡Conectado a mongo!')
@@ -19,6 +18,8 @@ client.on("ready", async () => {
     }
   })
   client.setMaxListeners(60)
+
+  //comandos random 
 
   command(client, "ping", (message) => {
     message.channel.send("Pong!");
@@ -33,6 +34,9 @@ client.on("ready", async () => {
       );
     });
   });
+
+  // comandos de eliminar mensajes
+
   command(client, ["clear", "borrar"], async (message) => {
     const numMsgs = message.content.split(" ")[1];
     const promises = [];
@@ -54,6 +58,9 @@ client.on("ready", async () => {
       message.channel.send(`<@${member.id}>, no tienes permisos para usar ese comando`)
     }
   });
+
+  // comando de estado del bot (por defecto siempre "jugando League of Legends")
+  
   command(client, "status", (message) => {
     if (message.member.hasPermission("ADMINISTRATOR")) {
       const content = message.content.replace('-status ', '');
@@ -67,18 +74,21 @@ client.on("ready", async () => {
       message.channel.send("No tienes permiso para usar ese comando")
     }
   });
-  client.user.setPresence({
+  client.user.setPresence({// status por defecto
     activity: {
       name: "League of Legends",
       type: 0,
     }
   });
 
-  //firstMessage(client,'852262834238914640','hello world',['🏀'])
+  //mensajes privados
+
   privateMessage(client,'ping','Pong!')
   privateMessage(client,'teemo','Cómo osas pronunciar el nombre del gran TEEMO escoria!?')
 
-  command(client, 'cct', async (message) => {// crear canales de texto
+  // crear canales de texto
+
+  command(client, 'cct', async (message) => {
     const name = message.content.replace('-cct', '')
     const { member } = message
     if (message.member.hasPermission("ADMINISTRATOR")) {
@@ -95,7 +105,10 @@ client.on("ready", async () => {
         message.channel.send(`<@${member.id}>, no tienes permisos para usar ese comando`)
     }
   })
-  command(client, 'ccv', async (message) => { //  crear canales de voz 
+
+  //  crear canales de voz 
+
+  command(client, 'ccv', async (message) => { 
     const name = message.content.replace('-ccv', '')
     const { member } = message
     if (message.member.hasPermission("ADMINISTRATOR")) {
@@ -112,7 +125,10 @@ client.on("ready", async () => {
       message.channel.send(`<@${member.id}>, no tienes permisos para usar ese comando`)
     }
   })
-  command(client, 'codigo', (message) => {
+
+  // codigo del bot
+
+  command(client, 'codigo', (message) => { 
     const logo = 'https://i.imgur.com/ghtkRY4.jpg'
 
     const embed = new Discord.MessageEmbed()
@@ -124,6 +140,9 @@ client.on("ready", async () => {
 
     message.channel.send(embed)
   })
+
+  // comando help
+
   command(client, ['help','h'], (message) => {
     const logo = 'https://i.imgur.com/ghtkRY4.jpg'
 
@@ -131,7 +150,6 @@ client.on("ready", async () => {
     .setTitle('COMANDOS')
     .setThumbnail(logo)
     .setColor('#3374FF')
-    //.setDescription("El prefijo del bot es '/'\n`Generales:`\n**/comandos** -> Muestra los comandos del bot\n**/usuarios** -> Muestra los usuarios totales del servidor\n**/codigo** -> Codigo javascript del bot (por si le interesa a alguien)\n`Otros:`\n**/ping** -> Puedes jugar al Ping Pong con el bot\n**/f** -> Press F to pay respects\n")
     .setDescription("El prefijo del bot es '-'")
     .addFields(
       {
@@ -149,6 +167,9 @@ client.on("ready", async () => {
     )
     message.channel.send(embed)
   })
+
+  // informacion del servidor
+
   command(client, 'serverinfo', (message) => {
     const { guild } = message
 
@@ -176,6 +197,9 @@ client.on("ready", async () => {
 
     message.channel.send(embed)
   })
+
+  // comando ban
+
   command(client, 'ban', (message) => {
     const { member, mentions } = message
 
@@ -194,6 +218,9 @@ client.on("ready", async () => {
       message.channel.send(`${tag}, no tienes permisos para usar ese comando`)
     }
   })
+
+  // comando kick
+
   command(client, 'kick', (message) => {
     const { member, mentions } = message
 
