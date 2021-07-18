@@ -10,6 +10,7 @@ const mongo = require('./mongo')
 
 client.on("ready", async () => {
   console.log("¡Poro-bot listo!");
+  message.channel.send("Listo")
   await mongo().then((mongoose) => {
     try{
       console.log('¡Conectado a mongo!')
