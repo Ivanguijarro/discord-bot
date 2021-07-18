@@ -78,7 +78,7 @@ client.on("ready", async () => {
   privateMessage(client,'teemo','Cómo osas pronunciar el nombre del gran TEEMO escoria!?')
 
   command(client, 'cct', async (message) => {// crear canales de texto
-    const name = message.content.replace('/cct', '')
+    const name = message.content.replace('-cct', '')
     const { member } = message
     if (message.member.hasPermission("ADMINISTRATOR")) {
       if(name == ''){
@@ -95,7 +95,7 @@ client.on("ready", async () => {
     }
   })
   command(client, 'ccv', async (message) => { //  crear canales de voz 
-    const name = message.content.replace('/ccv', '')
+    const name = message.content.replace('-ccv', '')
     const { member } = message
     if (message.member.hasPermission("ADMINISTRATOR")) {
       if(name == ''){
