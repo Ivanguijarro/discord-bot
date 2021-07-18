@@ -77,7 +77,6 @@ client.on("ready", async () => {
   privateMessage(client,'ping','Pong!')
   privateMessage(client,'teemo','Cómo osas pronunciar el nombre del gran TEEMO escoria!?')
   privateMessage(client,'f','F')
-  privateMessage(client,'F','F')
 
   command(client, 'cct', async (message) => {// crear canales de texto
     const name = message.content.replace('/cct', '')
