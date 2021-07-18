@@ -184,7 +184,7 @@ client.on("ready", async () => {
         icon: bomba
       }
     )
-    message.send(embed)
+    message.channel.send(embed)
   })
 
   // informacion del servidor
