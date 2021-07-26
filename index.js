@@ -182,7 +182,7 @@ client.on("ready", async () => {
   
   })
 
-  // informacion del servidor
+  // informacion del server
 
   command(client, 'serverinfo', (message) => {
     const { guild } = message
