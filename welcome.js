@@ -1,6 +1,6 @@
 
 
-module.exports = (client) => {
+//module.exports = (client) => {
   const channelId = '470503733613035526'
   const targetChannel = '829296012945784864'
 
@@ -13,4 +13,4 @@ module.exports = (client) => {
     const channel = member.guild.channels.cache.get(channelId)
     channel.send(message)
   })
-} 
+//} 
