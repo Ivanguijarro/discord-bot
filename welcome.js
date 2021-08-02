@@ -1,5 +1,5 @@
 const mongo = require('./mongo')
-const mongoose = require('./mongoose')
+const mongoose = require('mongoose')
 const command = require('./command')
 const welcomeSchema = require('./schemas/welcome-schema')
 
