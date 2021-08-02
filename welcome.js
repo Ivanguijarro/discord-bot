@@ -28,8 +28,6 @@ module.exports = client => {
             channel.send('No tienes permisos para usar ese comando')
             return
         } 
-
-        cache[guild.id] = [channel.id, text]
         
         let text = content
 
