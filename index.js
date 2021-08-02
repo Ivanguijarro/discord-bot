@@ -250,7 +250,7 @@ bot.on("guildMemberAdd", (member) => {
       .setAuthor(`¡${member.user.tag} se ha unido!`, member.user.avatarURL())
       .setDescription("Bienvenido a PORO's GAMING!")
       .setColor("FF0000");
-  member.guild.channels.cache.get("channelid").send(welcomembed)
+  member.guild.channels.cache.get(channelId).send(welcomembed)
 
       .catch((err) => console.log(err));
 });
