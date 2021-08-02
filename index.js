@@ -7,9 +7,6 @@ const privateMessage = require("./private-message")
 const welcome = require('./welcome')
 const mongo = require('./mongo')
 
-const intents = ["GUILDS", "GUILD_MEMBERS"];
-const bot = new Discord.Client({intents: intents, ws:{intents: intents}});
-
 
 client.on("ready", async () => {
   console.log("¡Poro-bot listo!");
@@ -245,24 +242,7 @@ client.on("ready", async () => {
     }
   })
 });
-bot.on("guildMemberAdd", (member) => {
-  let welcomembed = new Discord.MessageEmbed()
-      .setAuthor(`¡${member.user.tag} se ha unido!`, member.user.avatarURL())
-      .setDescription("Bienvenido a PORO's GAMING!")
-      .setColor("FF0000");
-  member.guild.channels.cache.get("channelid").send(welcomembed)
 
-      .catch((err) => console.log(err));
-});
-bot.on("guildMemberRemove", (member) => {
-  let welcomembed = new Discord.MessageEmbed()
-      .setAuthor(`¡${member.user.tag} se ha ido!`, member.user.avatarURL())
-      .setDescription("¡Esperamos que vuelva!")
-      .setColor("FF0000");
-  member.guild.channels.cache.get("channelid").send(welcomembed)
-
-      .catch((err) => console.log(err));
-});
 
 client.login(config.token);
 client.login(process.env.poro_token);

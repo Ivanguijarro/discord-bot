@@ -1,5 +1,3 @@
-
-
 module.exports = (client) => {
   const channelId = '470503733613035526'
   const targetChannel = '829296012945784864'
