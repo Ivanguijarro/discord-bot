@@ -2,7 +2,7 @@ module.exports = (client) => {
   const channelId = '470503733613035526'
   const targetChannel = '829296012945784864'
 
-  client.on('guildMemberAdd', async(member) => {
+  client.on('guildMemberAdd', (member) => {
     //console.log(member)
     console.log("Nuevo miembro")
 
