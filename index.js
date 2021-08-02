@@ -4,7 +4,7 @@ const client = new Discord.Client();
 const config = require("./config.json");
 const command = require("./command");
 const privateMessage = require("./private-message")
-const welcome = require("./welcome")
+const welcome = require('./welcome')
 const mongo = require('./mongo')
 
 
@@ -18,7 +18,7 @@ client.on("ready", async () => {
     }
   })
   client.setMaxListeners(60)
-
+  welcome(client)
   //comandos random 
 
   command(client, "ping", (message) => {
@@ -241,9 +241,6 @@ client.on("ready", async () => {
       message.channel.send(`${tag}, no tienes permisos para usar ese comando`)
     }
   })
-  welcome(client)
-
-
 });
 
 client.login(config.token);
