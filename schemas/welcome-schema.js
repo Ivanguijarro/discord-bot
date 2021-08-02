@@ -7,10 +7,10 @@ const reqString = {
 
 const welcomeSchema = mongoose.Schema({
     _id: reqString,
-    channelId: reqString,
+    guildId: reqString,
     text: {
         type: String,
-        default: "Bienvenido "
+        default: "Bienvenido"
     }
 })
 
