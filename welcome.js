@@ -8,11 +8,12 @@ module.exports = (client) => {
 
     //const message = `¡Bienvenido al servidor <@${member.id}>! Porfavor revisa las ${member.guild.channels.cache.get(targetChannel).toString()}`
 
-    let welcomembed = new Discord.MessageEmbed()
-        .setAuthor(`${member.user.tag} just joined!`, member.user.avatarURL())
+    const welcomembed = new Discord.MessageEmbed()
+        .setAuthor(`¡${member.user.tag} se ha unido!`, member.user.avatarURL())
         .setDescription(`¡Bienvenido al servidor <@${member.id}>! Porfavor revisa las ${member.guild.channels.cache.get(targetChannel).toString()}`)
         .setColor("FF0000");
-    member.guild.channels.cache.get("channelid").send(welcomembed)
+    const channel = member.guild.channels.cache.get(channelId)
+    channel.send(welcomembed)
 
     //const channel = member.guild.channels.cache.get(channelId)
     //channel.send(message)
