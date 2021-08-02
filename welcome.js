@@ -11,4 +11,13 @@ module.exports = (client) => {
     const channel = member.guild.channels.cache.get(channelId)
     channel.send(message)
   })
+  client.on('guildMemberRemove', (member) => {
+    console.log(member)
+    console.log("Fuera miembro")
+
+    const message = `<@${member.id}> se ha ido, ojalá vuelva`
+
+    const channel = member.guild.channels.cache.get(channelId)
+    channel.send(message)
+  })
 } 
