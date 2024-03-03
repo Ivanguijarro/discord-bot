@@ -1,5 +1,5 @@
 {
     "token": "",
     "prefix": "-",
-    "mongoPath": "mongodb+srv://ivanguijarro:Ivanguijarro99@poro-bot.umx20.mongodb.net/porobot?retryWrites=true&w=majority"
+    "mongoPath": ""
 }
